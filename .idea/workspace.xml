@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="953a3d24-bef0-4d34-9d26-3f863dceb0e1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,6 +74,7 @@
       <workItem from="1575710866906" duration="3146000" />
       <workItem from="1575717158841" duration="876000" />
       <workItem from="1575736151441" duration="1447000" />
+      <workItem from="1575739628369" duration="279000" />
     </task>
     <servers />
   </component>
@@ -95,6 +95,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CustomFlask$CustomFlask.coverage" NAME="CustomFlask Coverage Results" MODIFIED="1575737664902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CustomFlask$CustomFlask.coverage" NAME="CustomFlask Coverage Results" MODIFIED="1575739934307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
