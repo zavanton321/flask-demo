@@ -1,0 +1,8 @@
+{% macro cell(target, highlight) %}
+    <td>
+        {% set hl = target <= highlight %}
+        {% if hl %}<b>{% endif %}
+        {{ target }}
+        {% if hl %}</b>{% endif %}
+    </td>
+{% endmacro %}

@@ -1,3 +1,4 @@
+{% import 'macros.html' as macros %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,24 +18,9 @@
     {% for month in months %}
         <tr>
             <td>{{ month }}</td>
-            <td>
-                {% set hl = data[month]['rain'] <= highlight['rain'] %}
-                {% if hl %}<b>{% endif %}
-                {{ data[month]['rain'] }}
-                {% if hl %}</b>{% endif %}
-            </td>
-            <td>
-                {% set hl = data[month]['min'] <= highlight['min'] %}
-                {% if hl %}<b>{% endif %}
-                {{ data[month]['min'] }}
-                {% if hl %}</b>{% endif %}
-            </td>
-            <td>
-                {% set hl = data[month]['max'] >= highlight['max'] %}
-                {% if hl %}<b>{% endif %}
-                {{ data[month]['max'] }}
-                {% if hl %}</b>{% endif %}
-            </td>
+            {{ macros.cell(data[month]['rain'], highlight['rain']) }}
+            {{ macros.cell(data[month]['min'], highlight['min']) }}
+            {{ macros.cell(data[month]['max'], highlight['max']) }}
         </tr>
     {% endfor %}
 </table>
