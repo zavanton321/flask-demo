@@ -1,28 +1,34 @@
 {% extends "bootstrap/base.html" %}
 
 {% block title %}
-    Some form
+    My Custom Flask Demo
 {% endblock %}
 
 {% block navbar %}
     <nav class="navbar navbar-inverse" role="navigation">
         <div class="container">
-            <a class="navbar-brand" href="{{ url_for('index') }}">Hello</a>
+            <a class="navbar-brand" href="#">Hello</a>
         </div>
     </nav>
 {% endblock %}
 
 {% block content %}
-
     <div class="container">
 
         <form method="post" action="">
-            <p>Name: <input name="name" type="text"/></p>
-            <p><input type="submit" name="submit" value="Submit"/></p>
+
+            <p>{{ form.name.label }} {{ form.name }}</p>
+
+            {% for error in form.name.errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+
+            {{ form.submit() }}
+            {{ form.hidden_tag() }}
         </form>
 
         {% if name %}
-            <p>Hello, {{ name }}</p>
+            <p>Name: {{ name }}</p>
         {% endif %}
     </div>
 {% endblock %}
