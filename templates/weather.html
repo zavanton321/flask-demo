@@ -5,12 +5,22 @@
     {{ city }} Weather
 {% endblock %}
 
+{% block navbar %}
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="#">Weather</a>
+        </div>
+    </nav>
+{% endblock %}
+
 {% block content %}
-    <h1>Weather in {{ city }}</h1>
-    <table>
-        {{ macros.table_head() }}
-        {% for month in months %}
-            {{ macros.row(month, data, highlight) }}
-        {% endfor %}
-    </table>
+    <div class="container">
+        <h1>Weather in {{ city }}</h1>
+        <table class="table table-hover">
+            {{ macros.table_head() }}
+            {% for month in months %}
+                {{ macros.row(month, data, highlight) }}
+            {% endfor %}
+        </table>
+    </div>
 {% endblock %}

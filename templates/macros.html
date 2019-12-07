@@ -17,10 +17,12 @@
 {% endmacro %}
 
 {% macro cell(target, highlight) %}
-    <td>
-        {% set hl = target <= highlight %}
-        {% if hl %}<b>{% endif %}
+    {% set condition = target <= highlight %}
+    <td
+            {% if condition %}
+                class="warning"
+            {% endif %}
+    >
         {{ target }}
-        {% if hl %}</b>{% endif %}
     </td>
 {% endmacro %}
