@@ -5,6 +5,11 @@ app = Flask(__name__)
 bootstrap = Bootstrap(app)
 
 
+@app.errorhandler(404)
+def error404(e):
+    return render_template("404.html")
+
+
 @app.route("/")
 def weather():
     months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
