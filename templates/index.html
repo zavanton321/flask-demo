@@ -1,34 +1,40 @@
-{% extends "bootstrap/base.html" %}
+{% extends "base.html" %}
 
-{% block title %}
-    My Custom Flask Demo
-{% endblock %}
+{% block title %} Registration Form {% endblock %}
 
-{% block navbar %}
-    <nav class="navbar navbar-inverse" role="navigation">
-        <div class="container">
-            <a class="navbar-brand" href="#">Hello</a>
-        </div>
-    </nav>
-{% endblock %}
+{% block page_content %}
 
-{% block content %}
-    <div class="container">
+    <form method="post" action="">
 
-        <form method="post" action="">
+        <p>{{ form.first_name.label }} {{ form.first_name }}</p>
+        {% for error in form.first_name.errors %}
+            <p>{{ error }}</p>
+        {% endfor %}
 
-            <p>{{ form.name.label }} {{ form.name }}</p>
+        <p>{{ form.last_name.label }} {{ form.last_name }}</p>
+        {% for error in form.last_name.errors %}
+            <p>{{ error }}</p>
+        {% endfor %}
 
-            {% for error in form.name.errors %}
-                <p>{{ error }}</p>
-            {% endfor %}
+        <p>{{ form.age.label }} {{ form.age }}</p>
+        {% for error in form.age.errors %}
+            <p>{{ error }}</p>
+        {% endfor %}
 
-            {{ form.submit() }}
-            {{ form.hidden_tag() }}
-        </form>
+        {{ form.submit() }}
+        {{ form.hidden_tag() }}
+    </form>
 
-        {% if name %}
-            <p>Name: {{ name }}</p>
-        {% endif %}
-    </div>
+    {% if first_name %}
+        <p>First name: {{ first_name }}</p>
+    {% endif %}
+
+    {% if last_name %}
+        <p>Last name: {{ last_name }}</p>
+    {% endif %}
+
+    {% if age %}
+        <p>Age: {{ age }}</p>
+    {% endif %}
+
 {% endblock %}
