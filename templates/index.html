@@ -18,9 +18,9 @@
 
         <div class="row">
             <div class="col-md-5">
-                {{ wtf.quick_form(form) }}
-                {% if name %}
-                    <p>Name: {{ name }}</p>
+                {{ wtf.quick_form(form, enctype='multipart/form-data') }}
+                {% if image %}
+                    <img src="{{ url_for('static', filename=image) }}"/>
                 {% endif %}
             </div>
         </div>
