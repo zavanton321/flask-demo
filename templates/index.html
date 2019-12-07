@@ -1,40 +1,26 @@
 {% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
 
 {% block title %} Registration Form {% endblock %}
 
 {% block page_content %}
 
-    <form method="post" action="">
+    <div class="row">
+        <div class="col-md-5">
+            {{ wtf.quick_form(form) }}
 
-        <p>{{ form.first_name.label }} {{ form.first_name }}</p>
-        {% for error in form.first_name.errors %}
-            <p>{{ error }}</p>
-        {% endfor %}
+            {% if first_name %}
+                <p>First name: {{ first_name }}</p>
+            {% endif %}
 
-        <p>{{ form.last_name.label }} {{ form.last_name }}</p>
-        {% for error in form.last_name.errors %}
-            <p>{{ error }}</p>
-        {% endfor %}
+            {% if last_name %}
+                <p>Last name: {{ last_name }}</p>
+            {% endif %}
 
-        <p>{{ form.age.label }} {{ form.age }}</p>
-        {% for error in form.age.errors %}
-            <p>{{ error }}</p>
-        {% endfor %}
-
-        {{ form.submit() }}
-        {{ form.hidden_tag() }}
-    </form>
-
-    {% if first_name %}
-        <p>First name: {{ first_name }}</p>
-    {% endif %}
-
-    {% if last_name %}
-        <p>Last name: {{ last_name }}</p>
-    {% endif %}
-
-    {% if age %}
-        <p>Age: {{ age }}</p>
-    {% endif %}
+            {% if age %}
+                <p>Age: {{ age }}</p>
+            {% endif %}
+        </div>
+    </div>
 
 {% endblock %}
