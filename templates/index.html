@@ -1,10 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-<h1>Home</h1>
-</body>
-</html>
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+    Some form
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Hello</a>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+
+        <form method="post" action="">
+            <p>Name: <input name="name" type="text"/></p>
+            <p><input type="submit" name="submit" value="Submit"/></p>
+        </form>
+
+        {% if name %}
+            <p>Hello, {{ name }}</p>
+        {% endif %}
+    </div>
+{% endblock %}
