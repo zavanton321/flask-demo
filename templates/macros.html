@@ -6,3 +6,12 @@
         {% if hl %}</b>{% endif %}
     </td>
 {% endmacro %}
+
+{% macro row(month, data, highlight) %}
+    <tr>
+        <td>{{ month }}</td>
+        {{ cell(data[month]['rain'], highlight['rain']) }}
+        {{ cell(data[month]['min'], highlight['min']) }}
+        {{ cell(data[month]['max'], highlight['max']) }}
+    </tr>
+{% endmacro %}

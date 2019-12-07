@@ -16,12 +16,7 @@
     </tr>
 
     {% for month in months %}
-        <tr>
-            <td>{{ month }}</td>
-            {{ macros.cell(data[month]['rain'], highlight['rain']) }}
-            {{ macros.cell(data[month]['min'], highlight['min']) }}
-            {{ macros.cell(data[month]['max'], highlight['max']) }}
-        </tr>
+        {{ macros.row(month, data, highlight) }}
     {% endfor %}
 </table>
 </body>
