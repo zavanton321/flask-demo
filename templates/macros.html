@@ -1,10 +1,10 @@
-{% macro cell(target, highlight) %}
-    <td>
-        {% set hl = target <= highlight %}
-        {% if hl %}<b>{% endif %}
-        {{ target }}
-        {% if hl %}</b>{% endif %}
-    </td>
+{% macro table_head() %}
+    <tr>
+        <th>Month</th>
+        <th>Rain</th>
+        <th>Min</th>
+        <th>Max</th>
+    </tr>
 {% endmacro %}
 
 {% macro row(month, data, highlight) %}
@@ -14,4 +14,13 @@
         {{ cell(data[month]['min'], highlight['min']) }}
         {{ cell(data[month]['max'], highlight['max']) }}
     </tr>
+{% endmacro %}
+
+{% macro cell(target, highlight) %}
+    <td>
+        {% set hl = target <= highlight %}
+        {% if hl %}<b>{% endif %}
+        {{ target }}
+        {% if hl %}</b>{% endif %}
+    </td>
 {% endmacro %}
