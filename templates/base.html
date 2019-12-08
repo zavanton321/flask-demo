@@ -1,8 +1,6 @@
 {% extends "bootstrap/base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
-{% block title %}Login Example{% endblock %}
-
 {% block navbar %}
     <nav class="navbar navbar-inverse" role="navigation">
         <div class="container">
@@ -11,7 +9,6 @@
             </a>
             <ul class="nav navbar-nav">
                 <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('protected') }}">Protected</a></li>
             </ul>
             >
             <ul class="nav navbar-nav navbar-right">
