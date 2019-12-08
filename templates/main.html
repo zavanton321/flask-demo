@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Main</title>
-</head>
-<body>
-    <h1>Main</h1>
-    <p>You have accessed this page {{ count }} times.</p>
-</body>
-</html>
+{% extends "bootstrap/base.html" %}
+
+{% block title %} Session demo {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Homepage</h1>
+        <p>You have accessed this page {{ count }} times.</p>
+        <p>Last accessed {{ when }}</p>
+        <p>Go to the <a href="{{ url_for('other') }}">other page</a></p>
+    </div>
+{% endblock %}
