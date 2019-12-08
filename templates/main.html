@@ -1,12 +1,21 @@
 {% extends "bootstrap/base.html" %}
 
-{% block title %} Session demo {% endblock %}
+{% block title %} Homepage {% endblock %}
 
 {% block content %}
     <div class="container">
         <h1>Homepage</h1>
-        <p>You have accessed this page {{ count }} times.</p>
-        <p>Last accessed {{ when }}</p>
-        <p>Go to the <a href="{{ url_for('other') }}">other page</a></p>
+        <p><a href="{{ url_for('text') }}">Text</a></p>
+        <p><a href="{{ url_for('xml') }}">XML</a></p>
+        <p><a href="{{ url_for('json') }}">JSON</a></p>
+        <p><a href="{{ url_for('redirect_page') }}">Redirect to text</a></p>
+        <p><a href="{{ url_for('cookie_demo') }}">Cookie</a></p>
+        <p><a href="{{ url_for('error_demo') }}">Error</a></p>
+
+        {% if "message" in request.cookies %}
+            <p>Message cookie is {{ request.cookies["message"] }}</p>
+        {% else %}
+            <p>Message cookie is not set</p>
+        {% endif %}
     </div>
 {% endblock %}
