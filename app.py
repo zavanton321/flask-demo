@@ -11,7 +11,7 @@ def error404(e):
 
 
 @app.route("/")
-def weather():
+def home():
     months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
               'August', 'September', 'October', 'November', 'December']
     data = {
@@ -30,11 +30,16 @@ def weather():
     }
     city = "Moscow"
     highlight = {"min": 40, "max": 80, "rain": 5}
-    return render_template("weather.html",
+    return render_template("index.html",
                            months=months,
                            city=city,
                            data=data,
                            highlight=highlight)
+
+
+@app.route("/greet/<username>")
+def greet(username):
+    return render_template("greet.html", username=username)
 
 
 if __name__ == "__main__":
