@@ -1,0 +1,31 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('home') }}">Hello</a>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>home</h1>
+
+        <div class="row">
+            <div class="col-md-5">
+                {{ wtf.quick_form(form) }}
+
+                {% if name %}
+                    <p>You have registered: {{ name }}</p>
+                {% else %}
+                    <p>You haven't registered a new user yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
