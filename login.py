@@ -85,5 +85,11 @@ def logout():
     return redirect(url_for("index"))
 
 
+@app.route("/profile")
+@login_required
+def profile():
+    return render_template("profile.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
